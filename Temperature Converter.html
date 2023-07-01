@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Temperature Converter</title>
+
+    <style>
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Open Sens',sans-serif;
+}
+
+
+h1{
+    text-align: center;
+    padding-bottom: 50px;
+    
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background-color: aqua;
+    padding: 50px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+label{
+    display: block;
+    text-shadow: yellow;
+}
+
+.temp{
+    width: 50%;
+    padding: 50px 0;
+    background-color: red;
+    box-shadow: 2px 2px 20px 2px #1e1e4e;
+
+}
+
+.input-div{
+display: inline-block;
+font-size: 22px;
+
+}
+
+.inp{
+    height: 50px;
+    width: 200px;
+    font-size: 25px;
+    text-align: center;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Temperature Converter</h1>
+        </div>
+        <div class="temp">
+            <div class="input-div">
+                <label>Celcius </label><br>
+                <input type="number" value="0" id="cel" class="inp">
+            </div>
+        </div>
+
+        <div class="temp">
+            <div class="input-div">
+                <label>Farenhite</label><br>
+                <input type="number" value="32" id="fah" class="inp">
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script>
+
+   var cel = document.getElementById("cel");
+   var fah = document.getElementById("fah");
+   
+   cel.addEventListener ('input',function(){
+    let c = this.value;
+    let f = (c * 9/5) + 32;
+    fah.value = f;
+   });
+
+   fah.addEventListener('input',function(){
+   let f = this.value;
+   let c = (f-32) * 5/9;
+   cel.value = c;
+   });
+
+</script>
+
+</html>
+
